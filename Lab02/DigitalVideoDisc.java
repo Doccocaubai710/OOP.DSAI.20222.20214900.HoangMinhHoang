@@ -5,6 +5,7 @@ public class DigitalVideoDisc {
     private int length;
     private float cost;
     public static void main(String[] args){
+        DigitalVideoDisc dvd1=new DigitalVideoDisc();
         
     }
 

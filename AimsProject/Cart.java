@@ -19,6 +19,23 @@ public class Cart {
 		}
 		
 	}
+	
+	public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList) {
+		for (int i=0;i<dvdList.length;i++) {
+			this.addDigitalVideoDisc(dvdList[i]);
+		}
+	}
+	//Arbitrary number of arguments
+	
+	/*public void addDigitalVideoDisc(DigitalVideoDisc... dvds) {
+		for (DigitalVideoDisc dvd:Cart dvds) {
+			this.addDigitalVideoDisc(dvd);
+		}
+	}*/
+	public void addDigitalVideoDisc(DigitalVideoDisc dvd1,DigitalVideoDisc dvd2) {
+		this.addDigitalVideoDisc(dvd1);
+		this.addDigitalVideoDisc(dvd2);
+	}
 	public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
         boolean found = false;
         for (int i = 0; i < qtyOrdered; i++) {

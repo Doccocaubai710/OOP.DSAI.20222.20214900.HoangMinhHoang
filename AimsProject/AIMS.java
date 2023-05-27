@@ -1,5 +1,5 @@
-public class AIMS{
-    public static void main(String[] args){
+/*public class AIMS{
+    //public static void main(String[] args){
     	Cart anOrder=new Cart();
     	
     	DigitalVideoDisc dvd1=new DigitalVideoDisc("The Lion King","Animation","Roger Aller",87,19.95f);
@@ -12,4 +12,4 @@ public class AIMS{
     	System.out.println("Total Cost is:");
     	System.out.println(anOrder.totalCost());
     }
-}
+}*/

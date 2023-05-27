@@ -13,4 +13,7 @@ public class SavingAccount extends BankAccount {
 	public void withdraw() {
 		//cannot withdraw from saving account
 	}
+	public void withdraw(double amount) {
+		//do nothing
+	}
 }

@@ -36,7 +36,7 @@ public class Main {
                  * belongs to a specific class or implements a specific interface*/
                 if (account instanceof SavingAccount) {
                 	SavingAccount savingAccount = (SavingAccount) account;//Cast to SavingAccount
-                    savingAccount.withdraw();//cannot withdraw
+                    savingAccount.withdraw(2000);//cannot withdraw
                     System.out.println("Cannot withdraw from saving account");
                     System.out.println("Monthly Interest: "+  String.format("%.2f", savingAccount.monthlyInterest()));
                     savingAccount.deposit(20000);

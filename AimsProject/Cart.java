@@ -65,6 +65,23 @@ public class Cart {
         System.out.println("\nTotal cost: " + totalCost);
         System.out.println("***************************************************");
     }
+
+    public void searchCart(DigitalVideoDisc[] itemsToBeSearched){
+        boolean found=false;
+        for (DigitalVideoDisc item:itemsToBeSearched){
+            for (int i=0;i<qtyOrdered;i++){
+                if (itemsOrdered[i].isMatch(item.getTitle())){
+                    System.out.println("Found items in Cart:"+ itemsOrdered[i].getTitle());
+                    found=true;
+
+                }
+            }
+        if (!found){
+            System.out.println("Items not found") ;
+        }
+
+        }
+    }
   
 			
 }

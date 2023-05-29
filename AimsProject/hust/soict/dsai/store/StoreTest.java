@@ -16,6 +16,8 @@ public class StoreTest {
         store.addDigitalVideoDisc(dvd3);
         store.addDigitalVideoDisc(dvd4);
 
+        store.removeDigitalVideoDisc(dvd2);
+
         store.display();
 }
 }

@@ -16,7 +16,7 @@ public class TestPassingArgument {
     //     o2 = tmp;
     // }
 
-    //overloading
+    //overloadin
     public static void swap(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
 	    DigitalVideoDisc tmp = new DigitalVideoDisc(dvd1.getTitle(), dvd1.getCategory(), dvd1.getDirector(), dvd1.getLength(), dvd1.getCost());
 	    dvd1.setTitle(dvd2.getTitle());

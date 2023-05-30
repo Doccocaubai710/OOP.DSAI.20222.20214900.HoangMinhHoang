@@ -1,5 +1,7 @@
-package hust.soict.dsai.store;
-import hust.soict.dsai.disc.DigitalVideoDisc;
+package hust.soict.dsai.aims.store;
+
+import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+
 public class Store {
     private DigitalVideoDisc[] itemsInStore;
     private int count;

@@ -1,4 +1,7 @@
-package hust.soict.dsai.disc;
+package hust.soict.dsai.test.disc;
+
+import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+
 public class TestPassingArgument {
     public static void main(String[] args){
         DigitalVideoDisc jungleDVD = new DigitalVideoDisc("Jungle");

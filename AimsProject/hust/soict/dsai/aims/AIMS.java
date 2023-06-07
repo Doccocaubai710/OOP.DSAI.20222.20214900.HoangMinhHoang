@@ -1,17 +1,26 @@
 package hust.soict.dsai.aims;
-import hust.soict.dsai.aims.cart.Cart;
-import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+import java.util.ArrayList;
+import java.util.List;
+
+
+import hust.soict.dsai.aims.media.Book;
+import hust.soict.dsai.aims.media.CompactDisc;
+import hust.soict.dsai.aims.media.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.Media;
 public class AIMS{
     public static void main(String[] args){
-    	Cart cart=new Cart();
     	
-    	DigitalVideoDisc dvd1=new DigitalVideoDisc("The Lion King","Animation","Roger Aller",87,19.95f);
-    	cart.addDigitalVideoDisc(dvd1);
-    	DigitalVideoDisc dvd2=new DigitalVideoDisc("Star Wars","Science Fiction","George Lucas",87,24.95f);
-    	cart.addDigitalVideoDisc(dvd2);
-    	DigitalVideoDisc dvd3=new DigitalVideoDisc("Aladin","Animation",18.99f);
-    	cart.addDigitalVideoDisc(dvd3);
-		cart.printCart();
+		List<Media> mediae=new ArrayList<Media>();
+    	Media cd=new CompactDisc();
+		mediae.add( cd);
+    	
+    	Media dvd=new DigitalVideoDisc("Star Wars","Science Fiction","George Lucas",87,24.95f);
+    	mediae.add(dvd);
+    	Media book=new Book(3,"Aladin","Animation",18.99f);
+    	mediae.add(book);
+		for (Media media:mediae){
+			System.out.println(media.toString());
+		}
 		
     }
 }

@@ -1,46 +1,30 @@
 package hust.soict.dsai.aims.store;
 
-import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+import java.util.ArrayList;
+
+import hust.soict.dsai.aims.media.Media;
 
 public class Store {
-    private DigitalVideoDisc[] itemsInStore;
-    private int count;
-    public Store(){
-        itemsInStore=new DigitalVideoDisc[100];
-        count=0;
+    private ArrayList<Media> itemsInStore=new ArrayList<Media>();
+    
+    
+    public void addMedia(Media media){
+        itemsInStore.add(media);
+        System.out.println("Media has been added to store");
     }
-    public void addDigitalVideoDisc(DigitalVideoDisc dvd){
-        if (count<itemsInStore.length){
-            itemsInStore[count]=dvd;
-            count++;
-            System.out.println("DVD has been added to store.");
+    public void removeMedia(Media media){
+        boolean foundMedia=itemsInStore.remove(media);
+        if (foundMedia){
+            System.out.println("The media has been removed");
         }
         else{
-            System.out.println("Cannot add any more");
-        }
-    }
-    public void removeDigitalVideoDisc(DigitalVideoDisc dvd){
-        boolean foundDisc=false;
-        for (int i=0;i<count;i++){
-            if (itemsInStore[i]==dvd){
-                foundDisc=true;
-                for (int j=i;j<count-1;j++){
-                        itemsInStore[j]=itemsInStore[j+1];
-                }
-                itemsInStore[count-1]=null;
-                count--;
-                System.out.println("The items has been removed");
-                break;
-            }
-        }
-        if (!foundDisc){
-            System.out.println("Cannot found item to remove");
+            System.out.println("Cannot find item to remove");
         }
     }
     public void display(){
         System.out.println("DVDs in Store:");
-        for (int i=0;i<count;i++){
-            System.out.println(itemsInStore[i].toString());
+        for (Media media:itemsInStore){
+            System.out.println(media.toString());
         }
         
     }

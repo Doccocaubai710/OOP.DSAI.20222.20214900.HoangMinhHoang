@@ -2,19 +2,21 @@ package hust.soict.dsai.aims.media;
 
 import java.util.ArrayList;
 
+
 public class CompactDisc extends Disc implements Playable {
 
     private String artist;
-    private ArrayList<Track> tracks=new ArrayList<Track>();
+    private ArrayList<Track> tracks;
     public String getArtist(){
         return artist;
     }
     public CompactDisc(){
         super();
     }
-    public CompactDisc(int id,String title,String category, float cost,String artist){
-        super(id, title, category, cost);
+    public CompactDisc(int id,String title,String category, float cost,String artist,int length,String director){
+        super(id, title, category, cost, length, director);
         this.artist=artist;
+        this.tracks=new ArrayList<Track>();
     }
     public void addTrack(Track track){
         if (!tracks.contains(track)){
@@ -26,7 +28,7 @@ public class CompactDisc extends Disc implements Playable {
             tracks.remove(track);
         }
     }
-    public int getLength(){
+    public int getTrackLength(){
         int sum=0;
         for (int i=0;i<tracks.size();i++){
             sum+=tracks.get(i).getLength();
@@ -40,6 +42,6 @@ public class CompactDisc extends Disc implements Playable {
         }
     }
     public String toString(){
-        return "cd"+"-"+this.getArtist()+"-"+this.getDirector()+"-"+ this.getTitle() + " - " + this.getCategory()  + " :"  + this.getCost() +"-"+this.getLength()+ " $";
+        return "cd"+"-"+this.getArtist()+"-"+this.getDirector()+"-"+ this.getTitle() + " - " + this.getCategory()  + " :"  + this.getCost() +"-"+this.getTrackLength()+ " $";
     }
 }

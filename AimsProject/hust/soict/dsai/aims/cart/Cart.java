@@ -1,6 +1,7 @@
 package hust.soict.dsai.aims.cart;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import hust.soict.dsai.aims.media.Media;
 
@@ -10,9 +11,14 @@ public class Cart {
 
 	public void addMedia(Media media){
         itemsOrdered.add(media);
+        System.out.println("Added " + media.getTitle() + " to cart.");
     }
     public void removeMedia(Media media){
-        itemsOrdered.remove(media);
+        if (itemsOrdered.remove(media)) {
+            System.out.println("Removed " + media.getTitle() + " from cart.");
+        } else {
+            System.out.println("Item not found in cart.");
+        }
     }
 
 	
@@ -23,6 +29,14 @@ public class Cart {
             total += media.getCost();
         }
         return total;
+    }
+
+
+    public void sortbyTitleCost(){
+        Collections.sort(itemsOrdered,Media.COMPARE_BY_TITLE_COST);
+    }
+    public void sortByCostTiTle(){
+        Collections.sort(itemsOrdered,Media.COMPARE_BY_COST_TITLE);
     }
     public void printCart() {
         System.out.println("***********************CART***********************");
@@ -36,7 +50,4 @@ public class Cart {
         System.out.println("\nTotal cost: " + totalCost);
         System.out.println("***************************************************");
     }
-
-    
-			
 }

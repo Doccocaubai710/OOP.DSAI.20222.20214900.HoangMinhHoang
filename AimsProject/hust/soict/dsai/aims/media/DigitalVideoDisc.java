@@ -11,28 +11,31 @@ public class DigitalVideoDisc extends Disc implements Playable{
         super();
         nbDigitalVideoDisc += 1;
         this.setId(nbDigitalVideoDisc);
+        this.setTitle(title);
     }
 
     public DigitalVideoDisc(String title, String category , float cost) {
         super();
         nbDigitalVideoDisc += 1;
         this.setId(nbDigitalVideoDisc);
+        this.setCategory(category);
+        this.setCost(cost);
+        this.setTitle(title);
     }
     
-    public DigitalVideoDisc(String title, String category, String director, float cost) {
+    public DigitalVideoDisc(String title, String category,int length, String director, float cost) {
         super();
+        this.setCategory(category);
+        this.setCost(cost);
+        this.setLength(length);
+        this.setTitle(title);;
         nbDigitalVideoDisc += 1;
         this.setId(nbDigitalVideoDisc);
-        this.setDirector(getDirector());
+        this.setDirector(director);
     }
     
-    public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
-        super();
-        nbDigitalVideoDisc += 1;
-        this.setId(nbDigitalVideoDisc);
-        this.setDirector(getDirector());
-        this.setLength(getLength());
-    }
+    
+    @Override
 	public String toString(){
         return "dvd"+"-"+this.getDirector()+"-"+ this.getTitle() + " - " + this.getCategory()+"-"+this.getLength()  + " :"  + this.getCost() + " $";
     }

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import hust.soict.dsai.aims.media.Media;
+import hust.soict.dsai.aims.media.DigitalVideoDisc;
 
 public class Cart {
 	public static final int MAX_NUMBERS_ORDERED=20;
@@ -49,5 +50,33 @@ public class Cart {
         float totalCost = totalCost();
         System.out.println("\nTotal cost: " + totalCost);
         System.out.println("***************************************************");
+    }
+    public ArrayList<Media> getItemsOrdered() {
+        return itemsOrdered;
+    }
+    public void searchById(int idToMatch) {
+        boolean dvdFound = false;
+        for (Media dvd: itemsOrdered) {
+            if (dvd.getId() == idToMatch) {
+                dvd.toString();
+                dvdFound = true;
+            }
+        }
+        if (dvdFound == false) {
+            System.out.println("Item not found.");
+        } 
+    }
+
+    public void searchByTitle(String titleToMatch) {
+        boolean dvdFound = false;
+        for (Media dvd:itemsOrdered) {
+            if (((DigitalVideoDisc) dvd).isMatch(titleToMatch)) {
+                dvd.toString();
+                dvdFound = true;
+            }
+        }
+        if (dvdFound == false) {
+            System.out.println("Item not found.");
+        }
     }
 }

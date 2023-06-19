@@ -28,6 +28,9 @@ public class Store {
         }
         
     }
+    public ArrayList<Media> getItemsInStore() {
+        return itemsInStore;
+    }
     public Media search(String title) {
     for (Media media : itemsInStore) {
         if (media.getTitle().equalsIgnoreCase(title)) {

@@ -14,15 +14,16 @@ import hust.soict.dsai.aims.media.Playable;
 public class MediaStore extends JPanel {
 	private Media media;
 	private Cart cart;
-    public MediaStore(Media media){
+    public MediaStore(Media media,Cart cart){
         this.media=media;
+        this.cart=cart;
         this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
         
         JLabel title=new JLabel(media.getTitle());
         title.setFont(new Font(title.getFont().getName(),Font.PLAIN,20));
         title.setAlignmentX(CENTER_ALIGNMENT);
 
-        JLabel cost=new JLabel(""+media.getCost()+"$");
+        JLabel cost=new JLabel("           "+media.getCost()+"$");
         cost.setAlignmentX(CENTER_ALIGNMENT);
 
         JPanel container=new JPanel();
@@ -36,6 +37,7 @@ public class MediaStore extends JPanel {
 				cart.addMedia(media);
 				JDialog playDialog=new JDialog();
 				JLabel label1=new JLabel("Media Add");
+				cart.printCart();
 				playDialog.add(label1);
 				playDialog.setSize(100,100);
 				playDialog.setVisible(true);

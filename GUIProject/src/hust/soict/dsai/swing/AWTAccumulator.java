@@ -1,4 +1,4 @@
-package hust.soict.dsai;
+package hust.soict.dsai.swing;
 import java.awt.Frame;
 import java.awt.GridLayout;
 import java.awt.Label;

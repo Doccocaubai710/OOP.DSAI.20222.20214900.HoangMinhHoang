@@ -40,15 +40,21 @@ public abstract class Media {
         this.cost = cost;
     }
     public abstract String toString();
-    public boolean equals(Object obj){
-        if (this==obj){
-            return true;
+    public boolean equals(Object obj) {
+        if (obj instanceof Media) {
+            try {
+            Media media = (Media) obj;
+            return media.getTitle() == this.getTitle();
+            } catch (NullPointerException e) {
+                e.printStackTrace();
+                return false;
+            } catch (ClassCastException e) {
+                e.printStackTrace();
+                return false;
+            }
+        } else {
+            return false;
         }
-        if (obj instanceof Media){
-            Media other=(Media) obj;
-            return title.equals(other.title);
-        }
-        return false;
     }
 
     public static final Comparator<Media> COMPARE_BY_TITLE_COST=new MediaComparatorByTitleCost();

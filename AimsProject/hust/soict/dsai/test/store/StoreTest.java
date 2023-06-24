@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import hust.soict.dsai.aims.media.DigitalVideoDisc;
 import hust.soict.dsai.aims.cart.Cart;
+import hust.soict.dsai.aims.exception.PlayerException;
 import hust.soict.dsai.aims.media.CompactDisc;
 import hust.soict.dsai.aims.media.Media;
 import hust.soict.dsai.aims.store.Store;
@@ -140,10 +141,19 @@ public class StoreTest {
 				case 2:
 					if (media instanceof CompactDisc){
 						CompactDisc castMedia = (CompactDisc) media;
-						castMedia.play();
+						try {
+							castMedia.play();
+						} catch (PlayerException e) {
+							e.printStackTrace();
+						}
 					} else if ( media instanceof DigitalVideoDisc){
 						DigitalVideoDisc castMedia = (DigitalVideoDisc) media;
-						castMedia.play();
+						try {
+							castMedia.play();
+						} catch (PlayerException e) {
+							// TODO: handle exception
+							e.printStackTrace();
+						}
 					} else {
 						System.out.println("This media can not display.");
 						mediaDetailsMenu(media);
@@ -187,10 +197,20 @@ public class StoreTest {
 					isInStore = true;
 					if (media instanceof CompactDisc){
 						CompactDisc castMedia = (CompactDisc) media;
-						castMedia.play();
+						try {
+							castMedia.play();
+						} catch (Exception e) {
+							// TODO: handle exception
+							e.printStackTrace();
+						}
 					} else if ( media instanceof DigitalVideoDisc){
 						DigitalVideoDisc castMedia = (DigitalVideoDisc) media;
-						castMedia.play();
+						try {
+							castMedia.play();
+						} catch (Exception e) {
+							// TODO: handle exception
+							e.printStackTrace();
+						}
 					} else {
 						System.out.println("This media can not play");
 					}
@@ -448,12 +468,22 @@ public class StoreTest {
 			if (media.getId() == id){
 				if (media instanceof CompactDisc){
 					CompactDisc castMedia = (CompactDisc) media;
-					castMedia.play();
-					cartMenu();
+					try {
+						castMedia.play();
+						cartMenu();
+					} catch (PlayerException e) {
+						// TODO: handle exception
+						e.printStackTrace();
+					}
 				} else if (media instanceof DigitalVideoDisc){
 					DigitalVideoDisc castMedia = (DigitalVideoDisc) media;
-					castMedia.play();
-					cartMenu();
+					try {
+						castMedia.play();
+						cartMenu();
+					} catch (PlayerException e) {
+						// TODO: handle exception
+						e.printStackTrace();
+					}
 				} else {
 					System.out.println("Media with this id is not playable.");
 					cartMenu();
